@@ -1,0 +1,31 @@
+:root{
+    --color40:#DDE6ED;
+    --color30:#9DB2BF;
+    --color20:#526D82;
+    --color10:#27374D;
+    
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 9vh;
+    background-color: var(--color30);
+    padding: 1vh 0 1vh 0;
+    border-bottom: 1px double var(--color10);
+    border-radius: 0 0 8px 8px;
+}   
+.header>div{
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+.header>div>button{
+    font-size: x-large;
+    margin: 1vh 0 1vh 0;
+    padding: 7px;
+    background-color: var(--color10);
+    color: whitesmoke;
+    border-radius: 25%;
+}

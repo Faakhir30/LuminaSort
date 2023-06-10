@@ -1,44 +1,95 @@
-:root{
-    --color40:#DDE6ED;
-    --color30:#9DB2BF;
-    --color20:#526D82;
-    --color10:#27374D;
-    
+:root {
+  text-underline-offset: 0.8em;
+  --color40: #dde6ed;
+  --color30: #9db2bf;
+  --color20: #526d82;
+  --color10: #27374d;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #526d82 !important;
+}
+.slider{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 4vh;
+  justify-content: space-around;
+}
+.sliderLabel {
+  text-align: center;
+  color: #27374d;
 }
 
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100vw;
-    height: 9vh;
-    background-color: var(--color30);
-    padding: 1vh 0 1vh 0;
-    border-bottom: 1px double var(--color10);
-    border-radius: 0 0 8px 8px;
-}   
-.logo{
-    display: flex;
-    flex-direction: row;
-    font-size: xx-large;
-    font-weight: bold;
-    color: #27374D;
+.logo {
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+  font-weight: bold;
+  color: #27374d;
 }
-/* .header>div>button{
-    font-size: x-large;
-    margin: 1vh 0 1vh 0;
-    padding: 7px;
-    background-color: var(--color10);
-    color: whitesmoke;
-    border-radius: 25%;
-} */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 9vh;
+  font-family: "Shadows Into Light", cursive;
+  background-color: var(--color30);
+  padding: 1vh 0 1vh 0;
+  border-bottom: 1px double var(--color10);
+  border-radius: 0 0 8px 8px;
+}
+.start {
+  margin-right: 5px !important;
+  background-color: #27374d !important;
+}
+.btn .btn-success {
+}
+.selectSort {
+  font-size: x-large;
+  font-weight: bold;
+  color: #27374d;
+}
+.sorts {
+  display: flex;
+  justify-content: space-evenly;
+}
+.sorts > * {
+  margin: 5px;
+  text-decoration: none;
+  color: #fdfdfd;
+}
 
-.sorts{
+@media screen and (max-width: 1020px) {
+  .App {
     display: flex;
-    justify-content: space-evenly;
+  }
+  .header {
+    flex-direction: column;
+    justify-content: start;
+    width: 30vw;
+    height: 100vh;
+  }
+  .header > * {
+    margin-top: 20px;
+  }
+  .sortselector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bars {
+    height: 100vh !important;
+  }
+  .sorts {
+    flex-direction: column;
+  }
 }
-.sorts>*{
-    margin: 5px;
-    text-decoration: none;
-    color: #fdfdfd;
+@media screen and (min-width: 1020px) and (max-width: 1220px) {
+  .selectSort {
+    font-size: medium;
+  }
+  .randGen {
+    font-size: small;
+  }
 }

@@ -1,26 +1,24 @@
 .bars {
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: center;
-  height: 80vh;
+  height: 90vh;
   /* align-items: center; */
 }
 .bardata{
+  position: relative;
     align-items: center;
     text-align: center;
     font-weight:  bold ;
-    z-index: 1;
+    z-index: 999;
 }
 .bar {
   background-color: var(--color10);
-  z-index: 1;
+  z-index: 999;
   color: aqua;
   text-align: center;
   /* margin:1vh 1vw 0 1vw; */
-}
-
-.bars {
-  position: relative;
 }
 
 .bars::before {
@@ -33,4 +31,14 @@
   background-image: linear-gradient(to right, black 1px, transparent 1px),
     linear-gradient(to bottom, black 1px, transparent 1px);
   background-size: 20px 20px; /* Adjust the size of the grid cells */
+}
+
+.array{
+  font-family:'Shadows Into Light', cursive;
+  font-weight: bold;
+  font-size: larger;
+  align-self: center;
+  max-width: 20vw;
+  /* z-index: 1; */
+  margin-left: 20px;
 }

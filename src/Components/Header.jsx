@@ -14,8 +14,9 @@ const Header = () => {
     if (isSorted(bars)) {
       let startBtn = document.getElementsByClassName("start")[0];
       let slider = document.getElementById("sizeSlider");
+    let randGen = document.getElementsByClassName("randGen")[0];
       slider.disabled = false;
-      startBtn.disabled = false;
+    startBtn.disabled = false;randGen.disabled=false;
     }
   }, [bars]);
 
@@ -274,10 +275,12 @@ const Header = () => {
     e.preventDefault();
     let startBtn = document.getElementsByClassName("start")[0];
     let slider = document.getElementById("sizeSlider");
-    console.log(startBtn.disabled, slider.disabled);
+    let randGen = document.getElementsByClassName("randGen")[0];
+    
+//     console.log(startBtn.disabled, slider.disabled);
     startBtn.disabled = true;
-    slider.disabled = true;
-    console.log(startBtn.disabled, slider.disabled);
+    slider.disabled = true;randGen.disabled=true;
+//     console.log(startBtn.disabled, slider.disabled);
     const funcSelector = {
       insertion: InsertionSort,
       bubble: BubbleSort,

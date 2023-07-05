@@ -1,4 +1,4 @@
-function PlotBars({bars}) {
+function PlotBars({bars, setBars}) {
     const toArray=function(array) {
         const arrayString = JSON.stringify(array, (key, value) => {
             if (Array.isArray(value)) {
@@ -8,6 +8,14 @@ function PlotBars({bars}) {
         });
         return arrayString;
     }
+    const changeHandler = (e, index, action) => {
+        e.preventDefault();
+        const updatedBars = [...bars];
+        if (updatedBars[index]<30){
+            updatedBars[index] += action?1:-1;
+            setBars(updatedBars);
+        }
+      };
   return (
     <>
       {bars.map((element, index) => (
@@ -23,7 +31,10 @@ function PlotBars({bars}) {
                 marginRight: `${4 / bars.length}vw`,
                 backgroundColor: "#27374D", // Set the default background color
               }}
-            ></div>
+            >
+                <p onClick={e=>changeHandler(e, index, 0)} className={element<5?"d-none":""}>-</p>
+                <p onClick={e=>changeHandler(e, index, 1)}>+</p>
+            </div>
 
             <div className="numbers">{element}</div>
           </div>

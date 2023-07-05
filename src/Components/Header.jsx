@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Header.css";
 import "./styles/Bars.css";
-
+import PlotBars from "./PlotBars";
 const Header = () => {
   const [Size, setSize] = useState(25);
   const [speed, setSpeed] = useState(300);
@@ -277,10 +277,8 @@ const Header = () => {
     let slider = document.getElementById("sizeSlider");
     let randGen = document.getElementsByClassName("randGen")[0];
     
-//     console.log(startBtn.disabled, slider.disabled);
     startBtn.disabled = true;
     slider.disabled = true;randGen.disabled=true;
-//     console.log(startBtn.disabled, slider.disabled);
     const funcSelector = {
       insertion: InsertionSort,
       bubble: BubbleSort,
@@ -399,7 +397,7 @@ const Header = () => {
           START
         </button>
       </div>
-      <div className="bars">{plotBars(bars)}</div>
+      <div className="bars">{<PlotBars bars={bars}/>}</div>
     </>
   );
 };
@@ -412,43 +410,4 @@ function isSorted(arr) {
     }
   }
   return true;
-}
-
-function plotBars(bars) {
-  return (
-    <>
-      {bars.map((element, index) => (
-        <div>
-          <div className="bardata">
-            <div
-              key={index}
-              id={`${index}th-bar`}
-              className="bar"
-              style={{
-                height: `${(element / Math.max(...bars)) * 70}vh`,
-                width: `${40 / bars.length}vw`,
-                marginRight: `${4 / bars.length}vw`,
-                backgroundColor: "#27374D", // Set the default background color
-              }}
-            ></div>
-
-            <div className="numbers">{element}</div>
-          </div>
-        </div>
-      ))}
-      ;
-      <div className="array" key={"array"}>
-        ARRAY={toArray(bars)}
-      </div>
-    </>
-  );
-}
-function toArray(array) {
-  const arrayString = JSON.stringify(array, (key, value) => {
-    if (Array.isArray(value)) {
-      return `{${value.join(", ")}}`;
-    }
-    return value;
-  });
-  return arrayString;
 }

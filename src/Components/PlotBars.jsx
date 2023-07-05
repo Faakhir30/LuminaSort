@@ -11,7 +11,7 @@ function PlotBars({bars, setBars}) {
     const changeHandler = (e, index, action) => {
         e.preventDefault();
         const updatedBars = [...bars];
-        if (updatedBars[index]<30){
+        if (updatedBars[index]<Math.max(...bars)){
             updatedBars[index] += action?1:-1;
             setBars(updatedBars);
         }
